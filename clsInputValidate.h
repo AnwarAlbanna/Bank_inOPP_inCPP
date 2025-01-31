@@ -109,7 +109,11 @@ public :
 		return false;
 	}
 
-
+	static string ReadString() {
+		string S1="";
+		getline(cin >> ws, S1);
+		return S1;
+	}
 
 
 

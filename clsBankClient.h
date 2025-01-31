@@ -24,6 +24,9 @@ private :
 	static clsBankClient _GetEmptyClientObject() {
 		return clsBankClient(enMode::EmptyMode, "", "", "", "", "", "",0);
 	}
+	void _Update() {
+
+	}
 
 
 public :
@@ -74,7 +77,7 @@ public :
 		cout << "\nGetAccountNumber :" << GetAccountNumber();
 		cout << "\nPinCode          :" << PinCode;
 		cout << "\nBalance          :" << Balance;
-		cout << "\n__________________________________";
+		cout << "\n________________Anwar__________________";
 	}
 
 	static clsBankClient Find(string AccountNumber) {
@@ -115,6 +118,20 @@ public :
 	static bool IsClientExist(string AccountNumber) {
 		clsBankClient Client = clsBankClient::Find(AccountNumber);
 		return (!Client.IsEmpty());
+	}
+
+	enum enSaveResults { svFaildEmptyObject =0, svSecceded=1};
+
+	enSaveResults Save() {
+		switch (_Mode) {
+		case enMode::EmptyMode:
+			return enSaveResults::svFaildEmptyObject;
+			break;
+		case enMode::UpdateMode:
+			_Update();
+			return enSaveResults::svSecceded;
+			break;
+		}
 	}
 
 };
