@@ -45,12 +45,12 @@ void UpdateClient() {
 }
 
 void AddNewClient() {
-    // Edit anther one Edit Here oh Anwar
+    
 }
 
 int main()
 {
-    UpdateClient();
+    
     system("pause>0");
     return 0;
 }
