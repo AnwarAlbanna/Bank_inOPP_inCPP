@@ -4,7 +4,7 @@ using namespace std;
 class clsScreen
 {
 protected:
-	static void HeaderScrean(string Title, string Body) {
+	static void HeaderScreen(string Title, string Body) {
 		cout << "\n---------------------------------------------------------";
 		cout << "\n\t\t\t\t" << Title;
 		if (Title!="") {
