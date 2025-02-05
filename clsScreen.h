@@ -11,7 +11,7 @@ protected:
 			cout << "\n\t\t\t\t" << Body;
 		}
 		cout << "\n---------------------------------------------------------";
-			// add function choose anther one;
+			// oK
 	}
 
 };
