@@ -1,6 +1,18 @@
 #pragma once
+#include <iostream>
+using namespace std;
 class clsScreen
 {
-// add the code here please 
+protected:
+	static void HeaderScrean(string Title, string Body) {
+		cout << "\n---------------------------------------------------------";
+		cout << "\n\t\t\t\t" << Title;
+		if (Title!="") {
+			cout << "\n\t\t\t\t" << Body;
+		}
+		cout << "\n---------------------------------------------------------";
+
+	}
+
 };
 
