@@ -2,6 +2,7 @@
 #include <iostream>
 #include "clsBankClient.h"
 #include "clsInputValidate.h"
+#include "clsMainScreen.h"
 using namespace std;
 
 void ReadClientInfo(clsBankClient& Client) {
@@ -48,7 +49,7 @@ void UpdateClient() {
 
 int main()
 {
-    
+    clsMainScreen::ShowMainMenue();
     system("pause>0");
     return 0;
 }
