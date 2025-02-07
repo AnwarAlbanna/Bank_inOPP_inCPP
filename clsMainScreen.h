@@ -4,6 +4,7 @@
 #include "clsUtil.h"
 #include "clsInputValidate.h"
 #include "clsClientListScreen.h"
+#include "clsAddNewClient.h"
 #include <iomanip>
 using namespace std;
 class clsMainScreen :protected clsScreen
