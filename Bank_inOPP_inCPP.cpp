@@ -22,7 +22,7 @@ void ReadClientInfo(clsBankClient& Client) {
     Client.PinCode = clsInputValidate::ReadString();
 
     cout << "\nAccount Balance is :";
-    Client.Balance = clsInputValidate::ReadDblNumber();
+    Client.AccountBalance = clsInputValidate::ReadDblNumber();
 }
 
 void UpdateClient() {
