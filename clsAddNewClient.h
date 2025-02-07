@@ -31,7 +31,7 @@ private:
 
 public :
 
-   static void AddNewClient() {
+   static void ShowAddNewClientScreen() {
        system("cls");
        string Title = "\t  Add Client Screen ";
        _DrawScreenHeader(Title);
@@ -71,31 +71,7 @@ public :
 
 
 
-    void DeleteClient() {
-        string AccountNumber = "";
-        cout << "Please Enter AccountNumber to Deleted :";
-        AccountNumber = clsInputValidate::ReadString();
-        while (!clsBankClient::IsClientExist(AccountNumber)) {
-            cout << "The Account Number is Not Exist ,Choos anthe one:";
-            AccountNumber = clsInputValidate::ReadString();
-        }
-        clsBankClient Client = clsBankClient::Find(AccountNumber);
-        Client.Print();
-        cout << "Are You Sure Deleted the Account Number :(Y/N) :";
-        char Anwser = 'n';
-        cin >> Anwser;
-        if (Anwser == 'Y' || Anwser == 'y') {
-            if (Client.Delete())
-            {
-                cout << "the Deleted is Succeded ";
-                Client.Print();
-            }
-
-        }
-        else {
-            cout << " U Can't Deleted";
-        }
-    }
+    
    
     void PrintListToTotalBalance(clsBankClient Client) {
         cout << "|" << left << setw(15) << Client.AccountNumber();
@@ -131,31 +107,6 @@ public :
         cout << "\n\t\t\t\tTotal Balance is (" << TotalBalance << ")" << endl;
         //cout << "\n\t\t" << clsUtil::NumberToText(TotalBalance) << endl;
     }
-    void UpdateClient() {
-
-
-        string AccountNumber = "";
-        cout << "Please Enter Account to Clinet : ";
-        AccountNumber = clsInputValidate::ReadString();
-        while (!clsBankClient::IsClientExist(AccountNumber)) {
-            cout << "the AccountNubmer is not found, Choose anther one: ";
-            AccountNumber = clsInputValidate::ReadString();
-        }
-        clsBankClient Client = clsBankClient::Find(AccountNumber);
-        Client.Print();
-        cout << "\n___ Update Clietn ___\n";
-        cout << "_____________________\n";
-        ReadClientInfo(Client);
-        cout << "_____________________\n";
-        clsBankClient::enSaveResults SaveResult;
-        SaveResult = Client.Save();
-        if (SaveResult == clsBankClient::enSaveResults::svSucceeded) {
-            cout << "the AccountNumber Updated Succefuly ";
-            Client.Print();
-        }
-        else {
-            cout << "the AccountNumber Can't Updated -:) ";
-        }
-    }
+    
 };
 
