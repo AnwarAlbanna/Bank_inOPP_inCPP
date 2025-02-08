@@ -387,7 +387,14 @@ public:
      string  FullName() {
         return FirstName + " " + LastName;
     }
+     void Deposit(double Amount) {
+         AccountBalance += Amount;
+         Save();
+     }
 
-
+     void Withdraw(double Amount) {
+         AccountBalance -= Amount;
+         Save();
+     }
 };
 
