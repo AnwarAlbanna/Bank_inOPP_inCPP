@@ -71,9 +71,15 @@
     <ClInclude Include="clsWithdrawScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="clsUser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Clients.txt">
+      <Filter>Header Files</Filter>
+    </Text>
+    <Text Include="Users.txt">
       <Filter>Header Files</Filter>
     </Text>
   </ItemGroup>
