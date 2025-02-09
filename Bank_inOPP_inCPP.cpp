@@ -7,4 +7,5 @@ int main()
     clsMainScreen::ShowMainMenue();
     system("pause>0");
     return 0;
+    // the conflected is here
 }
