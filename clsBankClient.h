@@ -393,8 +393,14 @@ public:
      }
 
      bool Withdraw(double Amount) {
-         AccountBalance -= Amount;
-         Save();
+         if (Amount > AccountBalance) {
+             return false;
+         }
+         else {
+             AccountBalance -= Amount;
+             Save();
+         }
+        
      }
 };
 

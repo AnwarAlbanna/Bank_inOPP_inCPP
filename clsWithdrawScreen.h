@@ -48,9 +48,17 @@ class clsWithdrawScreen : protected clsScreen
 			cout << "\nAre you Sure Withdraw to the Account [Y/N]: ";
 			cin >> Anwser;
 			if (Anwser == 'Y' || Anwser == 'y') {
-				cout << "\n The Withdraw is Successfuly ";
-				Client.Withdraw(Amount);
-				cout << "\n The New Balance is " << Client.AccountBalance;
+				
+				if (Client.Withdraw(Amount)) {
+					cout << "\n The Withdraw is Successfuly ";
+					cout << "\n The New Balance is " << Client.AccountBalance;
+				}
+				else {
+					cout << "can't Withdraw because the Account Balance less than Amount" << endl;
+					cout << "The Accout Balance is : " << Client.AccountBalance;
+					cout << "\n The Amount is " << Amount;
+				}
+				
 
 			}
 			else {

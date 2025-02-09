@@ -49,7 +49,7 @@ public :
         cout << "\n-------------------------------------------------------------------------------------\n";
         double TotalBalance = clsBankClient::GetTotalBalances();
         cout << "\n\t\t\t\tTotal Balance is (" << TotalBalance << ")" << endl;
-        //cout << "\n\t\t" << clsUtil::NumberToText(TotalBalance) << endl;
+        cout << "\n\t\t" << clsUtil::NumberToText(TotalBalance) << endl;
     }
 };
 
