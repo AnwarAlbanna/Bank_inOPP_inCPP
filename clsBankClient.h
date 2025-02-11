@@ -107,6 +107,21 @@ private:
 
     }
 
+    void _AddDataLineToFile(string  stDataLine)
+    {
+        fstream MyFile;
+        MyFile.open("Clients.txt", ios::out | ios::app);
+
+        if (MyFile.is_open())
+        {
+
+            MyFile << stDataLine << endl;
+
+            MyFile.close();
+        }
+
+    }
+
     void _Update()
     {
         vector <clsBankClient> _vClients;
@@ -132,20 +147,7 @@ private:
         _AddDataLineToFile(_ConverClientObjectToLine(*this));
     }
 
-    void _AddDataLineToFile(string  stDataLine)
-    {
-        fstream MyFile;
-        MyFile.open("Clients.txt", ios::out | ios::app);
-
-        if (MyFile.is_open())
-        {
-
-            MyFile << stDataLine << endl;
-
-            MyFile.close();
-        }
-
-    }
+   
 
     static clsBankClient _GetEmptyClientObject()
     {
