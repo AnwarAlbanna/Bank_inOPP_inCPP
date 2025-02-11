@@ -118,6 +118,8 @@ private:
 			this->_Password = Password;
 			this->_Permeations = Permeations;
 		}
+		enum enPermisstion { pAll = -1, pShowClients = 1, pAddNewClient=2, pDeleteClient = 4, pUpdateClient=8,
+							pFindClinet=16, pTransaction=32,pManagUsers=64,pLogout=128};
 		void SetUserName(string UserName) {
 			this->_UserName = UserName;
 		}
