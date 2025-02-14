@@ -8,7 +8,7 @@ using namespace std;
 class clsAddNewUser : protected clsScreen
 {
 private:
-	static void ReadUsersInfo(clsUser User) {
+	static void ReadUsersInfo(clsUser &User) {
 		cout << "\n Enter FirstName: " ;
 		User.FirstName = clsInputValidate::ReadString();
 
@@ -21,8 +21,6 @@ private:
 		cout << "\n Enter Phone: ";
 		User.Phone = clsInputValidate::ReadString();
 
-		cout << "\n Enter UserName: ";
-		User.UserName = clsInputValidate::ReadString();
 
 		cout << "\n Enter Password: ";
 		User.Password = clsInputValidate::ReadString();
