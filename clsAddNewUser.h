@@ -39,49 +39,49 @@ private:
 		cout << "\nDo you want to gave some Permissions :";
 
 		cout << "\n Do you Acceess to show List Client ? y/n :";
-		cin >> Answer;
-		if (Answer == 'Y' || Answer == 'y') {
+			cin >> Answer;
+			if (Answer == 'Y' || Answer == 'y') {
 			Permission += clsUser::enPermisstion::pShowClients;
-		}
+			}
 
 		cout << "\n Do you Acceess to Add New Client ? y/n :";
-		cin >> Answer;
-		if (Answer == 'Y' || Answer == 'y') {
+			cin >> Answer;
+			if (Answer == 'Y' || Answer == 'y') {
 			Permission += clsUser::enPermisstion::pAddNewClient;
-		}
+			}
 
 		cout << "\n Do you Acceess to Delete Client ? y/n :";
-		cin >> Answer;
-		if (Answer == 'Y' || Answer == 'y') {
+			cin >> Answer;
+			if (Answer == 'Y' || Answer == 'y') {
 			Permission += clsUser::enPermisstion::pDeleteClient;
-		}
+			}
 
 		cout << "\n Do you Acceess to Update Client ? y/n :";
-		cin >> Answer;
-		if (Answer == 'Y' || Answer == 'y') {
+			cin >> Answer;
+			if (Answer == 'Y' || Answer == 'y') {
 			Permission += clsUser::enPermisstion::pUpdateClient;
-		}
+			}
 
 		cout << "\n Do you Acceess to Find Client ? y/n :";
-		cin >> Answer;
-		if (Answer == 'Y' || Answer == 'y') {
+			cin >> Answer;
+			if (Answer == 'Y' || Answer == 'y') {
 			Permission += clsUser::enPermisstion::pFindClinet;
-		}
+			}
 
 		cout << "\n Do you Acceess to Transactions  ? y/n :";
-		cin >> Answer;
-		if (Answer == 'Y' || Answer == 'y') {
+			cin >> Answer;
+			if (Answer == 'Y' || Answer == 'y') {
 			Permission += clsUser::enPermisstion::pTransaction;
-		}
+			}
 
 		cout << "\n Do you Acceess to Manage User  ? y/n :";
-		cin >> Answer;
-		if (Answer == 'Y' || Answer == 'y') {
+			cin >> Answer;
+			if (Answer == 'Y' || Answer == 'y') {
 			Permission += clsUser::enPermisstion::pManagUsers;
-		}
+			}
 
-		return Permission;
-	}
+			return Permission;
+		}
 	static void _PrintUser(clsUser User) {
 		cout << "\n--------------------------------------------------------";
 		cout << "\n FirstName    :" << User.FirstName;
@@ -95,12 +95,13 @@ private:
 
 	}
 
-
+		
 
 
 public:
 	static void ShowAddNewUserScreen() {
 
+	static void ShowAddNewUser() {
 		system("cls");
 		_DrawScreenHeader("\t\t Add User Screen ");
 		string UserName = "";
