@@ -16,7 +16,7 @@ private:
 	enMode _Mode;
 	string _UserName = "";
 	string _Password = "";
-	short  _Permeations = 0;
+	short  _Permeations = -1;
 
 	bool _MarkedForDelete = false;
 
@@ -114,12 +114,13 @@ private:
 
 		clsUser(enMode Mode, string FirstName, string LastName, string Email, string Phone,
 			string UserName, string Password, short Permeations) :clsPerson(FirstName, LastName, Email, Phone) {
+			this->_Mode = Mode;
 			this->_UserName = UserName;
 			this->_Password = Password;
 			this->_Permeations = Permeations;
 		}
 		enum enPermisstion { pAll = -1, pShowClients = 1, pAddNewClient=2, pDeleteClient = 4, pUpdateClient=8,
-							pFindClinet=16, pTransaction=32,pManagUsers=64,pLogout=128};
+							pFindClinet=16, pTransaction=32,pManagUsers=64};
 		void SetUserName(string UserName) {
 			this->_UserName = UserName;
 		}
@@ -156,7 +157,7 @@ private:
 				string Line;
 				while (getline(MyFile, Line)) {
 					clsUser User = _ConvertLineToUserObject(Line);
-					if (User.UserName == UserName) {
+					if (UserName == User.GetUserName()) {
 						MyFile.close();
 						return User;
 					}
@@ -278,6 +279,16 @@ private:
 			cout << "\nPermeation  : " << Permeations;
 			cout << "\n___________________\n";
 
+		}
+
+		 bool CheckAccessPermission(enPermisstion Permisstion) {
+			 if (this->_Permeations == enPermisstion::pAll)
+				 return true;
+			 if ((this->Permeations & Permisstion) == Permisstion)
+				 return true;
+			 else {
+				 return false;
+			 }
 		}
 };
 
